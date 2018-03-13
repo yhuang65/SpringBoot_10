@@ -14,7 +14,7 @@ import javax.validation.Valid;
 @Controller
 public class HomeController {
     @Autowired
-    CourseRepository courserepository;
+    CourseRepository courseRepository;
 
     @RequestMapping("/")
     public String listCourses(Model model){
@@ -27,7 +27,7 @@ public class HomeController {
         return "courseform";
     }
     @PostMapping("/process")
-    public String processForm(@Valid Course couse, BindingResult result){
+    public String processForm(@Valid Course course, BindingResult result){
         if(result.hasErrors()){
             return "courseform";
         }
